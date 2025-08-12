@@ -12,8 +12,9 @@ function App() {
 
   // Check if mobile on initial load
   const [isMobile, setIsMobile] = useState(false);
-  const [viewMode, setViewMode] = useState<ViewMode>("normal");
+  const [viewMode, setViewMode] = useState<ViewMode>("compact");
   const [showMap, setShowMap] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -25,12 +26,21 @@ function App() {
       }
     };
 
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
     // Check on mount
     checkMobile();
 
-    // Add resize listener
+    // Add event listeners
     window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [viewMode]);
 
   const getNextViewMode = (): ViewMode => {
@@ -104,10 +114,8 @@ function App() {
   return (
     <div className="app-container">
       {/* Header */}
-      <header className="header">
+      <header className={`header ${isScrolled ? "scrolled" : ""}`}>
         <div className="header-content">
-          <h1>{data.tripInfo.title}</h1>
-          <p>{data.tripInfo.subtitle}</p>
           <div className="header-info">
             <div className="header-info-item">
               <div className="header-dot green"></div>
@@ -135,7 +143,10 @@ function App() {
           {/* View Toggle and Map Buttons */}
           <div className="header-buttons">
             <button
-              onClick={() => setViewMode(getNextViewMode())}
+              onClick={() => {
+                setViewMode(getNextViewMode());
+                setShowMap(false);
+              }}
               className="view-toggle-button"
               aria-label={`Cambiar a ${getViewLabel()}`}
             >
