@@ -1686,12 +1686,12 @@ body {
   }
 
   .main-content {
-    padding-top: calc(3rem + 90px);
+    padding-top: calc(3rem + 110px);
   }
 
   .compact-view {
     padding: 1rem 0.75rem;
-    padding-top: calc(1rem + 110px); /* Extra padding for mobile fixed header */
+    padding-top: calc(1rem + 130px); /* Extra padding for mobile fixed header */
   }
 
   .day-card-header.compact {
