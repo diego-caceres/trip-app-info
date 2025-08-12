@@ -2,16 +2,18 @@ import { useState, useEffect } from "react";
 import type { ItineraryData } from "./types";
 import { ItineraryDay } from "./components/ItineraryDay";
 import { ItineraryTable } from "./components/ItineraryTable";
+import { MapView } from "./components/MapView";
 import itineraryData from "./data/itinerary.json";
 
 type ViewMode = "normal" | "compact" | "table";
 
 function App() {
   const data = itineraryData as ItineraryData;
-  
+
   // Check if mobile on initial load
   const [isMobile, setIsMobile] = useState(false);
   const [viewMode, setViewMode] = useState<ViewMode>("normal");
+  const [showMap, setShowMap] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -27,8 +29,8 @@ function App() {
     checkMobile();
 
     // Add resize listener
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, [viewMode]);
 
   const getNextViewMode = (): ViewMode => {
@@ -130,8 +132,8 @@ function App() {
             </div>
           </div>
 
-          {/* View Toggle Button */}
-          <div className="view-toggle-container">
+          {/* View Toggle and Map Buttons */}
+          <div className="header-buttons">
             <button
               onClick={() => setViewMode(getNextViewMode())}
               className="view-toggle-button"
@@ -139,6 +141,37 @@ function App() {
             >
               <span className="toggle-icon">{getViewIcon()}</span>
               <span className="toggle-text">{getViewLabel()}</span>
+            </button>
+
+            <button
+              onClick={() => setShowMap(!showMap)}
+              className={`map-button ${showMap ? "active" : ""}`}
+              aria-label={showMap ? "Ver itinerario" : "Ver mapa"}
+            >
+              <span className="map-icon">
+                {showMap ? (
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
+                  </svg>
+                ) : (
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z" />
+                  </svg>
+                )}
+              </span>
+              <span className="map-text">
+                {showMap ? "Itinerario" : "Mapa"}
+              </span>
             </button>
           </div>
         </div>
@@ -150,7 +183,9 @@ function App() {
           viewMode === "compact" ? "compact-view" : ""
         }`}
       >
-        {viewMode === "table" ? (
+        {showMap ? (
+          <MapView days={data.days} />
+        ) : viewMode === "table" ? (
           <ItineraryTable days={data.days} />
         ) : (
           /* Itinerary Grid */
@@ -171,24 +206,26 @@ function App() {
           </div>
         )}
 
-        {/* General Recommendations - Hidden in compact and table view */}
-        {data.generalRecommendations.length > 0 && viewMode === "normal" && (
-          <section className="recommendations-section">
-            <div className="recommendations-card">
-              <h2 className="recommendations-title">
-                Recomendaciones Generales
-              </h2>
-              <div className="recommendations-grid">
-                {data.generalRecommendations.map((recommendation, index) => (
-                  <div key={index} className="recommendation-item">
-                    <div className="recommendation-dot"></div>
-                    <p className="recommendation-text">{recommendation}</p>
-                  </div>
-                ))}
+        {/* General Recommendations - Hidden in compact, table and map view */}
+        {data.generalRecommendations.length > 0 &&
+          viewMode === "normal" &&
+          !showMap && (
+            <section className="recommendations-section">
+              <div className="recommendations-card">
+                <h2 className="recommendations-title">
+                  Recomendaciones Generales
+                </h2>
+                <div className="recommendations-grid">
+                  {data.generalRecommendations.map((recommendation, index) => (
+                    <div key={index} className="recommendation-item">
+                      <div className="recommendation-dot"></div>
+                      <p className="recommendation-text">{recommendation}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          </section>
-        )}
+            </section>
+          )}
       </main>
 
       {/* Footer */}
@@ -204,6 +241,10 @@ function App() {
             •{" "}
             <span className="footer-highlight blue">
               {data.tripInfo.cities} ciudades
+            </span>
+            •{" "}
+            <span className="footer-highlight purple">
+              {data.tripInfo.duration} días
             </span>
           </p>
           <div className="footer-dots">

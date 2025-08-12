@@ -1,3 +1,6 @@
+/* Import Leaflet CSS */
+@import "leaflet/dist/leaflet.css";
+
 /* Reset and Base Styles */
 * {
   margin: 0;
@@ -6,8 +9,8 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -29,14 +32,14 @@ body {
 }
 
 .header::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.1);
 }
 
 .header::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
@@ -46,7 +49,7 @@ body {
   position: relative;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
   text-align: center;
 }
 
@@ -90,9 +93,15 @@ body {
   border-radius: 50%;
 }
 
-.header-dot.green { background: #4ade80; }
-.header-dot.red { background: #f87171; }
-.header-dot.yellow { background: #facc15; }
+.header-dot.green {
+  background: #4ade80;
+}
+.header-dot.red {
+  background: #f87171;
+}
+.header-dot.yellow {
+  background: #facc15;
+}
 
 /* Main Content */
 .main-content {
@@ -113,7 +122,8 @@ body {
 /* Day Card Styles */
 .day-card {
   border-radius: 1rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
   overflow: hidden;
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
@@ -142,14 +152,18 @@ body {
 }
 
 .day-card-header::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 100%
+  );
 }
 
 .day-card-header::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -228,8 +242,12 @@ body {
   border-radius: 50%;
 }
 
-.section-dot.portugal { background: #22c55e; }
-.section-dot.spain { background: #ef4444; }
+.section-dot.portugal {
+  background: #22c55e;
+}
+.section-dot.spain {
+  background: #ef4444;
+}
 
 .section-title {
   font-size: 0.875rem;
@@ -238,8 +256,12 @@ body {
   letter-spacing: 0.05em;
 }
 
-.section-title.portugal { color: #15803d; }
-.section-title.spain { color: #b91c1c; }
+.section-title.portugal {
+  color: #15803d;
+}
+.section-title.spain {
+  color: #b91c1c;
+}
 
 .activities-text {
   font-size: 1rem;
@@ -248,8 +270,12 @@ body {
   margin-left: 1.25rem;
 }
 
-.activities-text.portugal { color: #14532d; }
-.activities-text.spain { color: #7f1d1d; }
+.activities-text.portugal {
+  color: #14532d;
+}
+.activities-text.spain {
+  color: #7f1d1d;
+}
 
 /* Transport Info */
 .transport-info {
@@ -426,7 +452,11 @@ body {
   align-items: flex-start;
   gap: 1rem;
   padding: 1.5rem;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(99, 102, 241, 0.1) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.08) 0%,
+    rgba(99, 102, 241, 0.1) 100%
+  );
   border-radius: 0.75rem;
   border: 1px solid rgba(59, 130, 246, 0.2);
   transition: all 0.3s ease;
@@ -480,8 +510,12 @@ body {
   font-weight: 500;
 }
 
-.footer-highlight.blue { color: #60a5fa; }
-.footer-highlight.purple { color: #a78bfa; }
+.footer-highlight.blue {
+  color: #60a5fa;
+}
+.footer-highlight.purple {
+  color: #a78bfa;
+}
 
 .footer-dots {
   margin-top: 1rem;
@@ -508,8 +542,12 @@ body {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
@@ -524,8 +562,13 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 /* View Toggle Button */
@@ -894,7 +937,8 @@ body {
   opacity: 0.8;
 }
 
-.no-transport, .no-accommodation {
+.no-transport,
+.no-accommodation {
   color: #9ca3af;
   font-style: italic;
 }
@@ -984,7 +1028,8 @@ body {
   font-size: 1rem;
 }
 
-.mobile-transport, .mobile-accommodation {
+.mobile-transport,
+.mobile-accommodation {
   margin-bottom: 0.75rem;
   font-size: 0.875rem;
   color: #6b7280;
@@ -996,13 +1041,446 @@ body {
   color: #374151;
 }
 
+/* Header Buttons Container */
+.header-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Map Button Styles */
+.map-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.map-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.map-button:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.map-button:active {
+  transform: translateY(1px);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.map-button.active {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.map-icon {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.map-button:hover .map-icon {
+  transform: scale(1.1);
+}
+
+.map-text {
+  font-weight: 600;
+  pointer-events: none;
+}
+
+/* Map View Styles */
+.map-view-container {
+  width: 100%;
+  height: calc(100vh - 200px);
+  min-height: 500px;
+}
+
+.map-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.map-title {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.map-subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.map-content {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2rem;
+  height: 100%;
+  position: relative;
+}
+
+.map-wrapper {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  min-height: 400px;
+}
+
+/* Leaflet map container */
+.map-wrapper > div {
+  height: 100% !important;
+  border-radius: 1rem;
+}
+
+/* Custom marker styles */
+.custom-day-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.marker-pin {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.marker-pin.selected {
+  transform: scale(1.15);
+}
+
+.marker-pin::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.marker-pin.portugal::before {
+  background-color: #22c55e;
+}
+
+.marker-pin.spain::before {
+  background-color: #ef4444;
+}
+
+.marker-pin.selected::before {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  border-width: 4px;
+}
+
+.marker-content {
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.day-number {
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.marker-pin:hover::before {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.map-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 50%, #93c5fd 100%);
+}
+
+/* Map Background Elements */
+.map-background {
+  opacity: 0.9;
+}
+
+.country {
+  stroke-width: 2;
+  stroke: #374151;
+  transition: all 0.3s ease;
+}
+
+.country.spain-bg {
+  fill: #fef2f2;
+  stroke: #ef4444;
+}
+
+.country.portugal-bg {
+  fill: #f0fdf4;
+  stroke: #22c55e;
+}
+
+.country:hover {
+  opacity: 0.8;
+  stroke-width: 3;
+}
+
+.coastline {
+  fill: none;
+  stroke: #1e40af;
+  stroke-width: 3;
+  stroke-linecap: round;
+  opacity: 0.7;
+}
+
+.rivers .river {
+  fill: none;
+  stroke: #3b82f6;
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: 0.6;
+}
+
+.route-path {
+  stroke: #6366f1;
+  stroke-width: 3;
+  fill: none;
+  stroke-dasharray: 10, 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.8;
+}
+
+.marker {
+  transition: all 0.3s ease;
+}
+
+.marker:hover {
+  transform: scale(1.2);
+}
+
+.marker.selected {
+  transform: scale(1.3);
+}
+
+.marker-circle {
+  stroke-width: 3;
+  stroke: white;
+  transition: all 0.3s ease;
+}
+
+.marker-circle.portugal {
+  fill: #22c55e;
+}
+
+.marker-circle.spain {
+  fill: #ef4444;
+}
+
+.marker.selected .marker-circle {
+  stroke-width: 4;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.marker-text {
+  fill: white;
+  font-size: 12px;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+/* Day Details Panel */
+.day-details-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.day-details-panel.portugal {
+  border-left: 4px solid #22c55e;
+}
+
+.day-details-panel.spain {
+  border-left: 4px solid #ef4444;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.panel-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #6b7280;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #374151;
+}
+
+.panel-content {
+  padding: 1.5rem;
+}
+
+.detail-item {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.detail-item strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+.detail-item .activities-text {
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  color: #6b7280;
+}
+
+/* Map Legend */
+.map-legend {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1.5rem;
+  height: fit-content;
+  position: sticky;
+  top: 0;
+}
+
+.map-legend h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.legend-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.legend-marker {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.legend-marker.portugal {
+  background: #22c55e;
+}
+
+.legend-marker.spain {
+  background: #ef4444;
+}
+
+.legend-line {
+  width: 2rem;
+  height: 2px;
+  background: #6366f1;
+  border-radius: 1px;
+}
+
+.legend-note {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   /* Table responsive behavior */
   .table-wrapper {
     display: none;
   }
-  
+
   .mobile-cards {
     display: block;
   }
@@ -1022,9 +1500,10 @@ body {
   }
 
   .header-info {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
   }
 
   .header-info-item {
@@ -1032,8 +1511,10 @@ body {
     font-size: 0.75rem;
   }
 
-  .view-toggle-container {
+  .header-buttons {
     margin-top: 1.5rem;
+    flex-direction: column;
+    gap: 0.75rem;
   }
 
   .day-header-content {
@@ -1041,11 +1522,11 @@ body {
     align-items: flex-start;
     gap: 1rem;
   }
-  
+
   .route-info {
     text-align: left;
   }
-  
+
   .recommendations-card {
     padding: 1.5rem 2rem;
   }
@@ -1081,8 +1562,43 @@ body {
     font-size: 0.8125rem;
   }
 
-  .toggle-text {
+  .toggle-text,
+  .map-text {
     display: none;
+  }
+
+  /* Map view mobile styles */
+  .map-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+  }
+
+  .map-view-container {
+    height: auto;
+    min-height: auto;
+  }
+
+  .map-wrapper {
+    height: 300px;
+    min-height: 300px;
+  }
+
+  .map-legend {
+    display: none;
+  }
+
+  .day-details-panel {
+    position: relative;
+    transform: none;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: none;
+    z-index: auto;
+    max-height: none;
+    order: 2;
   }
 
   .recommendations-grid.compact {
@@ -1110,27 +1626,35 @@ body {
   }
 
   .header-info {
-    gap: 0.5rem;
+    gap: 0.25rem;
+    flex-wrap: nowrap;
   }
 
   .header-info-item {
-    padding: 0.375rem 0.75rem;
-    font-size: 0.6875rem;
+    padding: 0.375rem 0.5rem;
+    font-size: 0.65rem;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.125rem;
-    text-align: left;
-    width: 100%;
-    max-width: 280px;
+    text-align: center;
+    flex: 1;
+    min-width: 0;
   }
 
   .view-toggle-container {
     margin-top: 1rem;
   }
 
-  .view-toggle-button {
+  .view-toggle-button,
+  .map-button {
     padding: 0.5rem 1rem;
     font-size: 0.75rem;
+  }
+
+  .header-buttons {
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-top: 1rem;
   }
 
   .compact-view {
