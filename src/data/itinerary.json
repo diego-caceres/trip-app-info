@@ -1,0 +1,213 @@
+{
+  "tripInfo": {
+    "title": "Portugal & España",
+    "subtitle": "Viaje de Muri y Dado • Septiembre-Octubre 2025",
+    "departure": {
+      "city": "Lisboa",
+      "date": "22/09",
+      "time": "11:50"
+    },
+    "return": {
+      "city": "Madrid", 
+      "date": "04/10",
+      "time": "23:55"
+    },
+    "duration": "13 días",
+    "countries": 2,
+    "cities": 6
+  },
+  "days": [
+    {
+      "day": 1,
+      "date": "Lunes 22 Septiembre",
+      "dateISO": "2025-09-22",
+      "route": "✈️ Llegada a Lisboa",
+      "country": "portugal",
+      "flag": "🇵🇹",
+      "transport": {
+        "type": "Avión",
+        "time": "11:50",
+        "distance": null
+      },
+      "activities": "Llegada, descanso y primer paseo por la ciudad. Explorar el Chiado o Bairro Alto.",
+      "accommodation": "Lisboa",
+      "suggestions": []
+    },
+    {
+      "day": 2,
+      "date": "Martes 23 Septiembre", 
+      "route": "Lisboa → Lagos (Algarve)",
+      "country": "portugal",
+      "transport": {
+        "type": "Bus",
+        "distance": "~280km - 3h 30m"
+      },
+      "activities": "Llegada tarde, paseo por el centro, atardecer en Ponta da Piedade.",
+      "accommodation": "Lagos",
+      "suggestions": [
+        {
+          "type": "transport",
+          "title": "💡 Sugerencia de Transporte",
+          "content": "Considera el tren Lisboa-Faro + bus Faro-Lagos. Es más cómodo y escénico que el bus directo."
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "date": "Miércoles 24 Septiembre",
+      "route": "Lagos (día completo)", 
+      "country": "portugal",
+      "transport": null,
+      "activities": "Playas (Praia Dona Ana, Camilo), paseo en barco por las cuevas, o escapada a Sagres.",
+      "accommodation": "Lagos",
+      "suggestions": []
+    },
+    {
+      "day": 4,
+      "date": "Jueves 25 Septiembre",
+      "route": "Lagos → Sevilla",
+      "country": "spain",
+      "flag": "🇪🇸", 
+      "transport": {
+        "type": "Bus + Tren",
+        "distance": "~350km - 4h 30m"
+      },
+      "activities": "Salida mañana. Tarde en Sevilla para empezar a recorrer.",
+      "accommodation": "Sevilla",
+      "suggestions": [
+        {
+          "type": "transport",
+          "title": "🚌 Mejor opción de transporte",
+          "content": "Bus Lagos-Huelva + Tren Huelva-Sevilla. O volar Lagos-Sevilla (más caro pero rápido)."
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "date": "Viernes 26 Septiembre",
+      "route": "Sevilla (día completo)",
+      "country": "spain", 
+      "transport": null,
+      "activities": "Alcázar, Catedral, Giralda, barrio Santa Cruz, arte contemporáneo, paseo nocturno por Triana.",
+      "accommodation": "Sevilla",
+      "suggestions": []
+    },
+    {
+      "day": 6,
+      "date": "Sábado 27 Septiembre",
+      "route": "Sevilla → Granada",
+      "country": "spain",
+      "transport": {
+        "type": "🚗 Auto alquilado",
+        "distance": "250km - 2h 30m"
+      },
+      "activities": "Llegada a Granada, paseo por el Albaicín y vistas de la Alhambra al atardecer.",
+      "accommodation": "Granada", 
+      "suggestions": [
+        {
+          "type": "transport",
+          "title": "🚗 Alternativa antes del auto",
+          "content": "Tren Sevilla-Antequera + Bus a Granada. Considera alquilar el auto desde Granada para evitar conducir en ciudad."
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "date": "Domingo 28 Septiembre",
+      "route": "Granada (día completo)",
+      "country": "spain",
+      "transport": null,
+      "activities": "Visita a la Alhambra (reserva previa obligatoria), centro histórico, Sacromonte. Posible espectáculo de flamenco.",
+      "accommodation": "Granada",
+      "suggestions": [
+        {
+          "type": "warning",
+          "title": "⚠️ Importante",
+          "content": "Reserva la Alhambra YA. Se agota meses antes. Sitio oficial: alhambra-patronato.es"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "date": "Lunes 29 Septiembre", 
+      "route": "Granada → Valencia",
+      "country": "spain",
+      "transport": {
+        "type": "🚗 Auto",
+        "distance": "490km - 5h"
+      },
+      "activities": "Día de viaje. Parada recomendada en Murcia o Alicante para almorzar y descansar.",
+      "accommodation": "Valencia",
+      "suggestions": []
+    },
+    {
+      "day": 9,
+      "date": "Martes 30 Septiembre",
+      "route": "Valencia (día completo)",
+      "country": "spain",
+      "transport": null,
+      "activities": "Ciudad de las Artes y las Ciencias, IVAM, paseo por el Jardín del Turia. Probar paella auténtica.",
+      "accommodation": "Valencia", 
+      "suggestions": []
+    },
+    {
+      "day": 10,
+      "date": "Miércoles 1 Octubre",
+      "route": "Valencia → Barcelona",
+      "country": "spain",
+      "transport": {
+        "type": "🚗 Auto (devolver)",
+        "distance": "350km - 3h 30m"
+      },
+      "activities": "Viaje matutino, llegada y primer paseo por el Born o Montjuïc.",
+      "accommodation": "Barcelona",
+      "suggestions": []
+    },
+    {
+      "day": 11,
+      "date": "Jueves 2 Octubre",
+      "route": "Barcelona - Día 1", 
+      "country": "spain",
+      "transport": null,
+      "activities": "MACBA, CCCB, explorar El Raval. Paseo por Las Ramblas y el Barrio Gótico.",
+      "accommodation": "Barcelona",
+      "suggestions": []
+    },
+    {
+      "day": 12,
+      "date": "Viernes 3 Octubre",
+      "route": "Barcelona - Día 2",
+      "country": "spain", 
+      "transport": null,
+      "activities": "Ruta Gaudí: Sagrada Familia, Casa Batlló, La Pedrera. Park Güell.",
+      "accommodation": "Barcelona",
+      "suggestions": []
+    },
+    {
+      "day": 13,
+      "date": "Sábado 4 Octubre",
+      "route": "Barcelona → Madrid → Uruguay",
+      "country": "spain",
+      "transport": {
+        "type": "🚄 Tren AVE (2h 30m) + ✈️ Vuelo",
+        "time": "23:55"
+      },
+      "activities": "Mañana libre en Barcelona (Parc de la Ciutadella). Tren tarde a Madrid. Vuelo nocturno.",
+      "accommodation": null,
+      "suggestions": [
+        {
+          "type": "warning", 
+          "title": "⏰ Timing crítico",
+          "content": "Reserva tren Barcelona-Madrid para las 17:00-18:00. Llega 3h antes del vuelo internacional."
+        }
+      ]
+    }
+  ],
+  "generalRecommendations": [
+    "🎫 Reserva Alhambra de Granada INMEDIATAMENTE",
+    "🚗 Considera alquilar el auto desde Granada (no desde Sevilla)", 
+    "🚄 Reserva tren AVE Barcelona-Madrid con anticipación",
+    "📱 Descarga apps: Renfe, Flix Bus, Google Translate offline",
+    "💳 Tarjetas sin comisión internacional recomendadas"
+  ]
+}
