@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { ItineraryData } from "./types";
 import { ItineraryDay } from "./components/ItineraryDay";
 import { ItineraryTable } from "./components/ItineraryTable";
@@ -8,23 +8,60 @@ type ViewMode = "normal" | "compact" | "table";
 
 function App() {
   const data = itineraryData as ItineraryData;
+  
+  // Check if mobile on initial load
+  const [isMobile, setIsMobile] = useState(false);
   const [viewMode, setViewMode] = useState<ViewMode>("normal");
 
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+      // Set initial view mode based on screen size
+      if (mobile && viewMode === "normal") {
+        setViewMode("compact");
+      }
+    };
+
+    // Check on mount
+    checkMobile();
+
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, [viewMode]);
+
   const getNextViewMode = (): ViewMode => {
-    switch (viewMode) {
-      case "normal":
-        return "compact";
-      case "compact":
-        return "table";
-      case "table":
-        return "normal";
-      default:
-        return "normal";
+    if (isMobile) {
+      // On mobile, only toggle between compact and table
+      switch (viewMode) {
+        case "compact":
+          return "table";
+        case "table":
+          return "compact";
+        case "normal":
+          return "compact"; // fallback
+        default:
+          return "compact";
+      }
+    } else {
+      // On desktop, cycle through all three modes
+      switch (viewMode) {
+        case "normal":
+          return "compact";
+        case "compact":
+          return "table";
+        case "table":
+          return "normal";
+        default:
+          return "normal";
+      }
     }
   };
 
   const getViewLabel = (): string => {
-    switch (viewMode) {
+    const nextMode = getNextViewMode();
+    switch (nextMode) {
       case "normal":
         return "Vista Normal";
       case "compact":
@@ -37,7 +74,8 @@ function App() {
   };
 
   const getViewIcon = () => {
-    switch (viewMode) {
+    const nextMode = getNextViewMode();
+    switch (nextMode) {
       case "normal":
         return (
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
